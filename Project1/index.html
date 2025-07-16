@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="images/Logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aayush Niroula</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <img  src="images/Logo.png" >
-        </div>
-            
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html">Projects</a>
-            <a href="index.html">Resume</a>
-            <a href="index.html">Socials</a>
-        </nav>
+      <div class="logo">
+        <img src="images/Logo.png" />
+      </div>
+
+      <nav>
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="projects.html" class="nav-btn">Projects</a>
+        <a
+          href="https://drive.google.com/file/d/11GjJXefemBGH69Qpwe-9TGeAowAuYRLr/view?usp=sharing"
+          class="nav-btn"
+          target="_blank"
+          >Resume</a
+        >
+        <a href="index.html" class="nav-btn">Socials</a>
+      </nav>
     </header>
     <main>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Welcome to My Portfolio</h1>
-      <p>I'm a passionate designer and developer. Explore my projects and get in touch!</p>
-      <div class="hero-buttons">
-        <button class="btn-primary">Contact Me</button>
-        <button class="btn-outline">See Projects</button>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Welcome to My Portfolio</h1>
+            <p></p>
+            <div class="hero-buttons">
+              <a href="#contact"
+                ><button class="btn-primary">Contact Me</button></a
+              >
+              <a href="projects.html"
+                ><button class="btn-outline">See Projects</button></a
+              >
+            </div>
+          </div>
+          <div class="hero-image">
+            <a
+              href="https://drive.google.com/file/d/11GjJXefemBGH69Qpwe-9TGeAowAuYRLr/view?usp=sharing"
+              target=""
+              ><img src="images/Resume.jpg" alt="Resume"
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section id="socials"></section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Dedicated and skilled Computer Science student with a solid foundation
+          in Java, JavaScript, and C++.Exhibiting a preference for backend
+          development and APIs. Proven ability in API integration, data
+          fetching, and key management. Adept at ensuring security, scalability,
+          and efficiency in projects. GPA of 3.538/4 with a hands-on mentoring
+          role in the Coding Club. Eager to contribute innovation and expertise
+          to the dynamic field of Computer Science.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: example@example.com | Phone: (123) 456-7890</p>
+
+        <div class="contact-content">
+          <!-- Left: Contact form -->
+          <form>
+            <label
+              >Name:
+              <input type="text" name="name" required />
+            </label>
+            <label
+              >Email:
+              <input type="email" name="email" required />
+            </label>
+            <label
+              >Message:
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">Send</button>
+          </form>
+
+          <!-- Right: Social media -->
+          <div class="contact-socials">
+            <h3>Connect with me</h3>
+            <a href="#">LinkedIn</a><br />
+            <a href="#">GitHub</a><br />
+            <a href="#">Twitter</a><br />
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 MyPortfolio</p>
+      <div class="social-icons">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
       </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I specialize in creating modern, responsive websites with a focus on usability and aesthetics. I enjoy working on creative projects and aspire to work as a UI/UX designer in the future.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: example@example.com | Phone: (123) 456-7890</p>
-    <form>
-      <label>Name: <input type="text" name="name" required></label><br>
-      <label>Email: <input type="email" name="email" required></label><br>
-      <label>Message: <textarea name="message" required></textarea></label><br>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 MyPortfolio</p>
-  <div class="social-icons">
-    <a href="#">Twitter</a>
-    <a href="#">LinkedIn</a>
-  </div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>
