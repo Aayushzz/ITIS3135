@@ -33,13 +33,81 @@ articles.forEach(article=>{
 
 
 /**
- * This function creates a DOM elment with information from the article object, and adds the element into the DOM.
+ * This function creates a DOM element with information from the article object, and adds the element into the DOM.
  * @param {object} article - an article
  */
 function addEntry(article) {
+  const wrapper = document.querySelector('.articles-wrapper');
 
+  // Create article element
+  const articleElem = document.createElement('article');
+  articleElem.classList.add('article-container');
+  wrapper.appendChild(articleElem);
+
+  // Delete button
+  const deleteBtn = document.createElement('button');
+  deleteBtn.classList.add('delete-btn');
+  deleteBtn.textContent = '✕';
+  articleElem.appendChild(deleteBtn);
+
+  // Article header
+  const headerDiv = document.createElement('div');
+  headerDiv.classList.add('article-header');
+
+  const avatarImg = document.createElement('img');
+  avatarImg.classList.add('avatar');
+
+  const authorIndex = authors.indexOf(article.author);
+  if (authorIndex !== -1) {
+    avatarImg.src = `images/avatar${authorIndex}.png`; // Corrected +1 offset
+  } else {
+    avatarImg.src = `images/default.jpeg`;
+  }
+  avatarImg.alt = 'avatar picture';
+
+  const authorDateDiv = document.createElement('div');
+  authorDateDiv.textContent = `${article.author} · ${article.date.toDateString()}`;
+
+  headerDiv.appendChild(avatarImg);
+  headerDiv.appendChild(authorDateDiv);
+  articleElem.appendChild(headerDiv);
+
+  // Article body
+  const bodyDiv = document.createElement('div');
+  bodyDiv.classList.add('article-body');
+
+  const titleH3 = document.createElement('h3');
+  titleH3.textContent = article.title;
+  bodyDiv.appendChild(titleH3);
+
+  const pElem = document.createElement('p');
+
+  if (article.content.length <= MAX_LENGTH) {
+    pElem.textContent = article.content;
+    bodyDiv.appendChild(pElem);
+  } else {
+    const firstPart = article.content.substring(0, MAX_LENGTH);
+    const secondPart = article.content.substring(MAX_LENGTH);
+
+    pElem.textContent = firstPart;
+
+    const spanDots = document.createElement('span');
+    spanDots.textContent = '...';
+    pElem.appendChild(spanDots);
+
+    const spanHidden = document.createElement('span');
+    spanHidden.classList.add('hidden');
+    spanHidden.textContent = secondPart;
+    pElem.appendChild(spanHidden);
+
+    bodyDiv.appendChild(pElem);
+
+    const readMoreBtn = document.createElement('button');
+    readMoreBtn.classList.add('btn');
+    readMoreBtn.textContent = 'Read More';
+    bodyDiv.appendChild(readMoreBtn);
+  }
+
+  articleElem.appendChild(bodyDiv);
 }
-
-
-
 
